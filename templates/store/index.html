@@ -1,0 +1,49 @@
+{% extends 'store/base.html' %}
+{% load static %}
+{% block main_content %}
+    <div class="showcase-container">
+    <section class="showcase">
+        <div class="container grid">
+            <div class="showcase-image-cont">
+                <img class="showcase-img" src="{% static 'images/circular.png'%}" alt="">
+            </div>
+            <div class="showcase-right flex">
+                <div class="showcase-search-cont ui-widget">
+                    <input class="ip-field" type="text" id="tags">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </div>
+                <div class="showcase-search-text">
+                    <p>like: dashain images, happy new year templates</p>
+                </div>
+                <div class="showcase-search-btn">
+                    <input type="submit" value="Popular" class="btn btn-primary">
+                    <input type="submit" value="Recent" class="btn btn-primary">
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+
+    <div class="optionsWrapper">
+    <div style="color: black; text-align: center;">
+		<button type="button" class="btn btn-light" style="color: black;;"><h3>Our Choices</h3></button>
+    <button type="button" class="btn btn-light" style="color: black;"><h3>Images</h3></button>
+    <button type="button" class="btn btn-light" style="color: black;"><h3>Videos</h3></button>
+    <button type="button" class="btn btn-light" style="color: black;"><h3>Graphics</h3></button>
+  </div>
+</div>
+
+
+
+<div class="mainboardWrapper">
+  <div class="mainboardContainer">
+    {% for pic in pictures %}
+    <div class="imageWrapper">
+      <div class="imageContainer">
+        <img class="imageBox" src="{{pic.image.url}}" alt="Blue paint waves on black" />
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock main_content %}
